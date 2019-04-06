@@ -1,0 +1,14 @@
+POST http://localhost:8080/candidate
+Content-Type: application/json
+
+{
+    "name": "Pekka Pora",
+    "number": 200,
+    "party": 1,
+    "district": 1,
+    "age": 50,
+    "profession": "Yrittäjä",
+    "residency": "Talvivaara",
+    "education": "Geologi",
+    "picture": "http://www.link.to/picture"
+}

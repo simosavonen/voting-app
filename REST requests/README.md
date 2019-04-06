@@ -6,4 +6,4 @@ Should fail and give error
 - delete_district.rest 
 
 Should succeed
-- some...
+- post_candidate.rest
