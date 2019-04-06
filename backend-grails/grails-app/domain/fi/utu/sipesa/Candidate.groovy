@@ -1,5 +1,8 @@
 package fi.utu.sipesa
 
+import grails.rest.*
+
+@Resource(uri='/candidate', formats=['json', 'xml'])
 class Candidate {
 
     String name

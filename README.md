@@ -14,12 +14,8 @@ Steps taken to create the REST api
     - `create-domain-class fi.utu.sipesa.District`
 5. write definitions for the created domain classes
 6. write dummy data into `grails-app/init/fi/utu/sipesa/BootStrap.groovy`
-7. generate REST controllers for the 3 domain classes
-    - `create-restful-controller fi.utu.sipesa.Candidate`
-    - `create-restful-controller fi.utu.sipesa.Party`
-    - `create-restful-controller fi.utu.sipesa.District`
-8. start the app `run-app`
-9. the REST api will respond at
+7. start the app `run-app`
+8. the REST api will respond at
     - http://localhost:8080/candidate
     - http://localhost:8080/party
     - http://localhost:8080/district
