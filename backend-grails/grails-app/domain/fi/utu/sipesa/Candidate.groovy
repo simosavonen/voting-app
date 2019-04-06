@@ -19,7 +19,7 @@ class Candidate {
 
     static constraints = {
         name minSize: 3, maxSize: 255
-        number min: 1
+        number min: 1, unique: true
         profession maxSize: 255
         residency minSize: 2, maxSize: 50
         education minSize: 2, maxSize: 100

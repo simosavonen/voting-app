@@ -7,4 +7,4 @@ Should fail and give error
 - delete_party.rest
 
 Should succeed
-- post_candidate.rest
+- post_candidate.rest (1st time OK, after gives error about **number** not being unique)
