@@ -19,3 +19,8 @@ Steps taken to create the REST api
     - http://localhost:8080/candidate
     - http://localhost:8080/party
     - http://localhost:8080/district
+
+## frontend-react
+1. start new React app `npx create-react-app frontend-react`
+2. in directory frontend-react, install axios `npm install axios --save`
+3. Bootstrap to make things look decent `npm install react-bootstrap bootstrap`
