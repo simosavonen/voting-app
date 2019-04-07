@@ -12,7 +12,8 @@ import Container from 'react-bootstrap/Container'
 
 const App = () => {
     const [candidates, setCandidates] = useState([]) 
-    const [parties, setParties] = useState([]) 
+    const [parties, setParties] = useState([])
+    const [visibleDetails, setVisibleDetails] = useState([]) 
 
     useEffect(() => {
         candidateService
@@ -29,11 +30,26 @@ const App = () => {
             setParties(response.data)
           })
       }, [])
+
+    const toggleCandidateDetails = ({id}) => {
+        if(visibleDetails.includes(id)) {
+            const filtered = visibleDetails.filter(d => d !== id)
+            setVisibleDetails(filtered)
+        } else {
+            const updated = visibleDetails.concat(id)
+            setVisibleDetails(updated)
+        }
+    }  
     
     return (             
         <Container>
             <Navigation />
-            <Candidates candidates={candidates} parties={parties} />
+            <Candidates 
+                candidates={candidates} 
+                parties={parties} 
+                visibleDetails={visibleDetails}
+                toggleHandler={toggleCandidateDetails}
+            />
         </Container>        
     )
 }
