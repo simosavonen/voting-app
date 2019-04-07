@@ -1,0 +1,14 @@
+POST http://localhost:8080/candidate
+Content-Type: application/json
+
+{
+    "name": "Donalt Rump",
+    "number": 300,
+    "party": 2,
+    "district": 2,
+    "age": 60,
+    "profession": "Liikemies",
+    "residency": "Washington DC",
+    "education": "Juontaja",
+    "picture": "http://www.link.to/picture"
+}

@@ -1,0 +1,14 @@
+POST http://localhost:8080/candidate
+Content-Type: application/json
+
+{
+    "name": "Bara Kobama",
+    "number": 400,
+    "party": 3,
+    "district": 3,
+    "age": 65,
+    "profession": "Eläkeläinen",
+    "residency": "Kalorama",
+    "education": "Doctor of Jurisprudence",
+    "picture": "http://www.link.to/picture"
+}
