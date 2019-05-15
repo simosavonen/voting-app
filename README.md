@@ -24,6 +24,7 @@ frontend:
 - insert more candidates with the REST requests
 
 Frontend with the 3 candidates inserted:
+
 <img src="https://raw.githubusercontent.com/simosavonen/voting-app/master/frontend-react/img/frontend.PNG" alt="Screencap of the React Frontend" width="600" />
 
 ## backend-grails
