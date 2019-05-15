@@ -1,9 +1,32 @@
 # voting-app
 
-Recreate the Vincit example, using different frameworks for the REST api and frontend.
+Recreate the Vincit voting-app example, using React for the frontend.
+
+## Instructions
+
+Clicking on the candidate row will reveal further details.
+The app is left unfinished, none of the frontend links work.
+
+requirements:
+- grails https://grails.org
+- node.js https://nodejs.org/en/
+
+Assuming the repo was cloned to `C:\voting-app`
+
+backend:
+- `C:\voting-app\backend-grails\grails`
+- `run-app` 
+
+frontend:
+- `C:\voting-app\frontend-react\npm install`
+- `C:\voting-app\frontend-react\npm start`
+- open http://localhost:3000
+- insert more candidates with the REST requests
 
 ## backend-grails
+
 Steps taken to create the REST api
+
 1. install grails https://grails.org 
 2. create a new app using profile rest-api
     - `grails create-app fi.utu.sipesa.backend-grails -profile rest-api`
@@ -19,8 +42,3 @@ Steps taken to create the REST api
     - http://localhost:8080/candidate
     - http://localhost:8080/party
     - http://localhost:8080/district
-
-## frontend-react
-1. start new React app `npx create-react-app frontend-react`
-2. in directory frontend-react, install axios `npm install axios --save`
-3. Bootstrap to make things look decent `npm install react-bootstrap bootstrap`
