@@ -3,10 +3,11 @@ import Table from 'react-bootstrap/Table'
 import Media from 'react-bootstrap/Media'
 import PartyColorCoded from './PartyColorCoded'
 
-const Candidate = ({ candidate, parties, toggleHandler, visibleDetails }) => {
+const Candidate = ({ candidate, parties, districts, toggleHandler, visibleDetails }) => {
     const rowStyle = {
         cursor: 'pointer'
     }
+    const district = districts.find(d => d.id === candidate.district.id)
     return (
         <>
             <tr style={rowStyle} onClick={() => toggleHandler(candidate)}>
@@ -18,6 +19,7 @@ const Candidate = ({ candidate, parties, toggleHandler, visibleDetails }) => {
                         id={candidate.party.id}
                     />
                 </td>
+                <td>{district && district.name}</td>
                 <td>äänestä | muokkaa | poista</td>
             </tr>
             {visibleDetails.includes(candidate.id) &&
@@ -30,7 +32,7 @@ const Candidate = ({ candidate, parties, toggleHandler, visibleDetails }) => {
 const CandidateDetails = ({ candidate }) => {
     return (
         <tr>
-            <td colSpan="4">
+            <td colSpan="5">
                 <Media>
                     <img
                         width={150}
@@ -54,7 +56,7 @@ const CandidateDetails = ({ candidate }) => {
     )
 }
 
-const CandidateList = ({ candidates, parties }) => {
+const CandidateList = ({ candidates, parties, districts }) => {
     const [visibleDetails, setVisibleDetails] = useState([])
 
     const toggleVisibility = ({ id }) => {
@@ -74,6 +76,7 @@ const CandidateList = ({ candidates, parties }) => {
                     <th>Nimi</th>
                     <th>Ehdokasnumero</th>
                     <th>Puolue</th>
+                    <th>Vaalipiiri</th>
                     <th></th>
                 </tr>
             </thead>
@@ -83,6 +86,7 @@ const CandidateList = ({ candidates, parties }) => {
                         key={candidate.number}
                         candidate={candidate}
                         parties={parties}
+                        districts={districts}
                         visibleDetails={visibleDetails}
                         toggleHandler={toggleVisibility}
                     />

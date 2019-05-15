@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import ReactDOM from 'react-dom'
 import candidateService from './services/candidates'
 import partyService from './services/parties'
+import districtService from './services/districts'
 import Navigation from './components/Navigation'
 import CandidateList from './components/CandidateList'
 
@@ -13,6 +14,7 @@ import Container from 'react-bootstrap/Container'
 const App = () => {
     const [candidates, setCandidates] = useState([])
     const [parties, setParties] = useState([])
+    const [districts, setDistricts] = useState([])
 
 
     useEffect(() => {
@@ -31,6 +33,14 @@ const App = () => {
             })
     }, [])
 
+    useEffect(() => {
+        districtService
+            .getAll()
+            .then(response => {
+                setDistricts(response.data)
+            })
+    }, [])
+
 
 
     return (
@@ -39,6 +49,7 @@ const App = () => {
             <CandidateList
                 candidates={candidates}
                 parties={parties}
+                districts={districts}
             />
         </Container>
     )
