@@ -36,9 +36,8 @@ const CandidateDetails = ({ candidate }) => {
                 <Media>
                     <img
                         width={150}
-                        height={150}
                         className="mr-3"
-                        src="https://via.placeholder.com/150"
+                        src={candidate.picture}
                         alt={candidate.name}
                     />
                     <Media.Body>

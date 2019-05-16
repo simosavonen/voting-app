@@ -36,7 +36,7 @@ class BootStrap {
             profession: 'Koodari',
             residency: 'Kaarina',
             education: 'Ylioppilas',
-            picture: 'http://www.link.to/image'
+            picture: 'https://via.placeholder.com/150'
         ).save()
 
     }

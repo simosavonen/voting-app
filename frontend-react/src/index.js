@@ -45,6 +45,14 @@ const App = () => {
       })
   }, [])
 
+  const addCandidate = (candidate) => {
+    candidateService
+      .create(candidate)
+      .then(response => {
+        setCandidates(candidates.concat(response.data))
+      })
+      .catch(error => console.log('ehdokkaan lisäys epäonnistui', error))
+  }
 
 
   return (
@@ -59,7 +67,7 @@ const App = () => {
           />
         } />
         <Route exact path='/addcandidate' render={() =>
-          <CandidateForm parties={parties} districts={districts} />
+          <CandidateForm parties={parties} districts={districts} addCandidate={addCandidate} />
         } />
         <Route exact path='/register' render={() => 'Rekisteröidy'} />
         <Route exact path='/login' render={() => 'Kirjaudu sisään'} />
