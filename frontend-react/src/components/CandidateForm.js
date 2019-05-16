@@ -37,7 +37,7 @@ let CandidateForm = (props) => {
           <Card.Header>Lisää ehdokas</Card.Header>
           <Card.Body>
             <Form onSubmit={submit}>
-              <Form.Group as={Row} controlId='formGridName'>
+              <Form.Group as={Row} controlId='Name'>
                 <Form.Label column lg={3} className='text-lg-right'>Ehdokkaan nimi</Form.Label>
                 <Col lg={9}>
                   <Form.Control
@@ -49,7 +49,7 @@ let CandidateForm = (props) => {
                 </Col>
               </Form.Group>
 
-              <Form.Group as={Row} controlId="formGridNumber">
+              <Form.Group as={Row} controlId="Number">
                 <Form.Label column lg={3} className='text-lg-right'>Ehdokasnumero</Form.Label>
                 <Col lg={4}>
                   <Form.Control type="number" placeholder="numero"
@@ -57,7 +57,7 @@ let CandidateForm = (props) => {
                 </Col>
               </Form.Group>
 
-              <Form.Group as={Row} controlId="formGridAge">
+              <Form.Group as={Row} controlId="Age">
                 <Form.Label column lg={3} className='text-lg-right'>Ikä</Form.Label>
                 <Col lg={4}>
                   <Form.Control type="number" placeholder="ikä"
@@ -65,7 +65,7 @@ let CandidateForm = (props) => {
                 </Col>
               </Form.Group>
 
-              <Form.Group as={Row} controlId="fromGridParty">
+              <Form.Group as={Row} controlId="Party">
                 <Form.Label column lg={3} className='text-lg-right'>Puolue</Form.Label>
                 <Col lg={9}>
                   <Form.Control as="select"
@@ -79,7 +79,7 @@ let CandidateForm = (props) => {
                 </Col>
               </Form.Group>
 
-              <Form.Group as={Row} controlId="fromGridDistrict">
+              <Form.Group as={Row} controlId="District">
                 <Form.Label column lg={3} className='text-lg-right'>Vaalipiiri</Form.Label>
                 <Col lg={9}>
                   <Form.Control as="select"
@@ -93,7 +93,7 @@ let CandidateForm = (props) => {
                 </Col>
               </Form.Group>
 
-              <Form.Group as={Row} controlId='formGridResidency'>
+              <Form.Group as={Row} controlId='Residency'>
                 <Form.Label column lg={3} className='text-lg-right'>Asuinkunta</Form.Label>
                 <Col lg={9}>
                   <Form.Control as="select"
@@ -107,7 +107,7 @@ let CandidateForm = (props) => {
                 </Col>
               </Form.Group>
 
-              <Form.Group as={Row} controlId='formGridProfession'>
+              <Form.Group as={Row} controlId='Profession'>
                 <Form.Label column lg={3} className='text-lg-right'>Ammatti</Form.Label>
                 <Col lg={9}>
                   <Form.Control
@@ -117,10 +117,9 @@ let CandidateForm = (props) => {
                     onChange={({ target }) => setProfession(target.value)}
                   />
                 </Col>
-
               </Form.Group>
 
-              <Form.Group as={Row} controlId='formGridEducation'>
+              <Form.Group as={Row} controlId='Education'>
                 <Form.Label column lg={3} className='text-lg-right'>Koulutus</Form.Label>
                 <Col lg={9}>
                   <Form.Control
@@ -132,7 +131,7 @@ let CandidateForm = (props) => {
                 </Col>
               </Form.Group>
 
-              <Form.Group as={Row} controlId='formGridPicture'>
+              <Form.Group as={Row} controlId='Picture'>
                 <Form.Label column lg={3} className='text-lg-right'>Valokuva</Form.Label>
                 <Col lg={9}>
                   <Form.Control
@@ -144,7 +143,7 @@ let CandidateForm = (props) => {
                 </Col>
               </Form.Group>
 
-              <Form.Group as={Row} controlId='formGridPicture'>
+              <Form.Group as={Row} controlId='Buttons'>
                 <Col lg={3}></Col>
                 <Col lg={9}>
                   <Button variant='primary' type='submit'>Lisää ehdokas</Button>
