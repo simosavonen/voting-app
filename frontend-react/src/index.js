@@ -10,6 +10,7 @@ import districtService from './services/districts'
 import Navigation from './components/Navigation'
 import CandidateList from './components/CandidateList'
 import CandidateForm from './components/CandidateForm'
+import axios from 'axios'
 
 import 'bootstrap/dist/css/bootstrap.css'
 import './components/PartyColors.css'
@@ -21,29 +22,26 @@ const App = () => {
   const [parties, setParties] = useState([])
   const [districts, setDistricts] = useState([])
 
-  useEffect(() => {
-    candidateService
-      .getAll()
-      .then(response => {
-        setCandidates(response.data)
-      })
-  }, [])
+  //console.log('app was rendered')
 
   useEffect(() => {
-    partyService
-      .getAll()
-      .then(response => {
-        setParties(response.data)
-      })
+    axios
+      .all([
+        candidateService.getAll(),
+        partyService.getAll(),
+        districtService.getAll()
+      ])
+      .then(axios.spread((candidateResponse, partyResponse, districtResponse) => {
+        // instead of rendering 3 times, do it once
+        ReactDOM.unstable_batchedUpdates(() => {
+          setCandidates(candidateResponse.data)
+          setParties(partyResponse.data)
+          setDistricts(districtResponse.data)
+        })
+      }))
   }, [])
 
-  useEffect(() => {
-    districtService
-      .getAll()
-      .then(response => {
-        setDistricts(response.data)
-      })
-  }, [])
+
 
   const addCandidate = (candidate) => {
     candidateService
